@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#fafaf8;}
+a{color:#0a0a0a;text-decoration:none;}
+a:hover{color:#555;}
+@keyframes slRise{from{opacity:0;transform:translateY(7%);}to{opacity:1;transform:translateY(0);}}
+@keyframes slFadeUp{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slHint{0%,100%{transform:translateY(0);opacity:0.55;}50%{transform:translateY(7px);opacity:1;}}
+@keyframes slDrop{from{opacity:0;transform:translateY(-34px) scale(1.03);}}
+</style>
+</helmet>
+<div style="font-family:'Manrope',sans-serif;color:#0a0a0a;background:#fafaf8;">
+<div ref="{{ wrapRef }}" style="height:480vh;position:relative;">
+<div style="position:sticky;top:0;height:100vh;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%,#f4f3f0 55%,#e9e7e2 100%);">
+  <div ref="{{ stackRef }}" style="position:absolute;left:50%;transform:translateX(-50%);bottom:calc(min(76vh, min(94vw, 1060px) / 1.5) + 16px);width:min(86vw,660px);z-index:1;display:{{ stackDisplay }};pointer-events:none;will-change:opacity;">{{ testimonialStack }}</div>
+  <div ref="{{ houseRef }}" style="position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;transform-origin:50% 82%;will-change:transform,opacity;z-index:2;">
+    <div style="animation:slRise 1.6s cubic-bezier(0.22,1,0.36,1) 0.3s both;">
+      <img src="uploads/ChatGPT Image Jul 17, 2026, 11_16_59 AM.png" alt="Luxury residence" style="display:block;width:auto;height:auto;max-width:min(94vw,1060px);max-height:76vh;margin:0 auto -2%;filter:drop-shadow(0 26px 50px rgba(10,10,10,0.22));"></img>
+    </div>
+  </div>
+  <div ref="{{ logoRef }}" style="position:absolute;left:50%;top:44%;transform:translate(-50%,-50%) scale(0.3);width:max-content;opacity:0;pointer-events:none;will-change:opacity;z-index:3;text-align:center;">
+    <div style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(156px,34.5vw,504px);line-height:1;color:#0a0a0a;letter-spacing:-0.01em;white-space:nowrap;">SpaceLayout</div>
+    <div style="margin-top:clamp(18px,3vw,42px);font-family:'Playfair Display',serif;font-size:clamp(33px,3.6vw,48px);font-weight:400;font-style:italic;color:rgba(10,10,10,0.7);letter-spacing:0.04em;">designed by <span style="font-family:'Playfair Display',serif;font-weight:600;font-style:normal;font-size:1.4em;letter-spacing:0.02em;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;">STUDIO23</span></div>
+    <div style="margin-top:clamp(24px,3.9vw,54px);font-family:'Manrope',sans-serif;font-size:clamp(30px,3.3vw,42px);font-weight:600;letter-spacing:0.42em;text-transform:uppercase;color:rgba(10,10,10,0.55);">Architecture&#160;&#160;·&#160;&#160;Design&#160;&#160;·&#160;&#160;Interiors&#160;&#160;·&#160;&#160;Construction</div>
+  </div>
+  <div ref="{{ blackRef }}" style="position:absolute;inset:0;background:#0a0a0a;opacity:0;pointer-events:none;z-index:7;will-change:opacity;"></div>
+  <header ref="{{ headerRef }}" style="position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(16px,2.6vw,28px) clamp(20px,4.5vw,56px);animation:slFadeUp 1s ease 0.9s both;z-index:6;">
+    <div style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(22px,2.4vw,30px);color:#0a0a0a;letter-spacing:-0.01em;flex:none;">SpaceLayout</div>
+    <nav style="display:flex;align-items:center;gap:clamp(16px,2.6vw,36px);font-size:13.5px;font-weight:600;letter-spacing:0.02em;">
+      <a href="#residences" style="color:#0a0a0a;" style-hover="color:#666;">Residences</a>
+      <a href="#residences" style="color:#0a0a0a;display:{{ navLinkDisplay }};" style-hover="color:#666;">Portfolio</a>
+      <a href="#residences" style="color:#0a0a0a;display:{{ navLinkDisplay }};" style-hover="color:#666;">About</a>
+      <a href="#contact" style="color:#ffffff;background:#0a0a0a;padding:12px 26px;border-radius:999px;font-weight:600;transition:background 0.25s;" style-hover="background:#333;">Enquire</a>
+    </nav>
+  </header>
+  <div ref="{{ hintRef }}" style="position:absolute;left:clamp(20px,4.5vw,56px);bottom:30px;display:flex;align-items:center;gap:10px;z-index:6;animation:slFadeUp 1s ease 1.6s both;pointer-events:none;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:rgba(10,10,10,0.55);">Scroll</div>
+    <svg width="14" height="20" viewBox="0 0 14 20" style="animation:slHint 2s ease-in-out infinite;"><path d="M7 1v16M2 12.5 7 18l5-5.5" fill="none" stroke="#0a0a0a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+  </div>
+</div>
+</div>
+<section id="residences" style="display:flex;flex-wrap:wrap;gap:clamp(28px,5vw,80px);align-items:center;justify-content:center;padding:clamp(72px,11vw,140px) clamp(24px,6vw,72px);background:#0a0a0a;color:#fafaf8;">
+  <div style="flex:1 1 320px;max-width:520px;display:flex;flex-direction:column;gap:20px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:rgba(250,250,248,0.55);">The Practice</div>
+    <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,3.2vw,44px);line-height:1.12;text-wrap:balance;">Every home begins with how a space should feel</h2>
+    <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(250,250,248,0.65);text-wrap:pretty;">We pair architectural insight with market discipline — sourcing, shaping and representing residences where proportion, light and layout come first.</p>
+  </div>
+  <div style="flex:0 1 auto;display:grid;grid-template-columns:repeat(3,minmax(90px,140px));gap:1px;background:rgba(250,250,248,0.16);border:1px solid rgba(250,250,248,0.16);">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+      <div style="background:#0a0a0a;padding:clamp(18px,2.4vw,30px) clamp(12px,1.8vw,22px);display:flex;flex-direction:column;gap:6px;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);font-weight:600;color:#fafaf8;">{{ s.value }}</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(250,250,248,0.45);">{{ s.label }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;compactNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Navigation&quot;},&quot;showStats&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+const TESTIMONIALS = [
+  { q: 'Exceeded our expectations. The attention to detail was simply outstanding.', a: 'Rahul Mehta' },
+  { q: 'From design to handover, everything was handled professionally.', a: 'Priya Nair' },
+  { q: 'Our dream home came to life exactly as we imagined.', a: 'Arjun Reddy' },
+  { q: 'Excellent craftsmanship and timely completion. Highly recommended.', a: 'Sneha Kapoor' },
+  { q: 'The team made the entire construction process completely stress-free.', a: 'Karthik Srinivasan' },
+  { q: 'Modern designs, quality execution, and transparent communication throughout.', a: 'Ananya Sharma' },
+  { q: 'Every corner reflects thoughtful planning and premium finishes.', a: 'Vikram Joshi' },
+  { q: 'Professional, reliable, and committed to delivering excellence.', a: 'Meera Desai' },
+  { q: 'They transformed our vision into a beautiful reality.', a: 'Rohan Malhotra' },
+  { q: 'Exceptional quality with great attention to every small detail.', a: 'Neha Verma' }
+];
+class Component extends DCLogic {
+  state = { ti: 3 };
+  componentDidMount() {
+    this._timer = setInterval(() => this.setState(s => ({ ti: (s.ti + 1) % TESTIMONIALS.length })), 5600);
+    this._onResize2 = () => this.forceUpdate();
+    window.addEventListener('resize', this._onResize2);
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    this._onScroll = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => {
+        this._raf = null;
+        const wrap = this.wrapEl;
+        if (!wrap) return;
+        const vh = window.innerHeight;
+        const t = clamp((window.scrollY - wrap.offsetTop) / (wrap.offsetHeight - vh), 0, 1);
+        const p = clamp(t / 0.55, 0, 1);
+        const z = clamp((t - 0.58) / 0.42, 0, 1);
+        if (this.houseEl) {
+          const scale = 1 + p * 1.9;
+          const fade = p < 0.5 ? 1 : clamp(1 - (p - 0.5) / 0.3, 0, 1);
+          this.houseEl.style.transform = 'scale(' + scale + ')';
+          this.houseEl.style.opacity = String(fade);
+          this.houseEl.style.filter = p > 0.35 ? 'blur(' + ((p - 0.35) * 10) + 'px)' : 'none';
+        }
+        if (this.stackEl) this.stackEl.style.opacity = String(p < 0.5 ? 1 : clamp(1 - (p - 0.5) / 0.3, 0, 1));
+        if (this.logoEl) {
+          const o = clamp((p - 0.28) / 0.34, 0, 1);
+          this.logoEl.style.opacity = String(o);
+          const base = (0.9 + 0.1 * clamp(p / 0.62, 0, 1)) / 3;
+          const zoom = 1 + Math.pow(z, 2.4) * 110;
+          this.logoEl.style.transform = 'translate(-50%,-50%) scale(' + (base * zoom) + ')';
+        }
+        if (this.blackEl) this.blackEl.style.opacity = String(clamp((z - 0.68) / 0.24, 0, 1));
+        if (this.headerEl) {
+          const ho = clamp(1 - z * 2.2, 0, 1);
+          this.headerEl.style.opacity = String(ho);
+          this.headerEl.style.pointerEvents = ho < 0.1 ? 'none' : 'auto';
+        }
+        if (this.hintEl) {
+          this.hintEl.style.opacity = String(clamp(1 - p * 4, 0, 1));
+          if (p > 0.01) this.hintEl.style.animation = 'none';
+        }
+      });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    clearInterval(this._timer);
+    window.removeEventListener('resize', this._onResize2);
+    window.removeEventListener('scroll', this._onScroll);
+    window.removeEventListener('resize', this._onScroll);
+    if (this._raf) cancelAnimationFrame(this._raf);
+  }
+  renderVals() {
+    const compact = (this.props.compactNav ?? false);
+    const n = TESTIMONIALS.length, ti = this.state.ti;
+    const cards = [];
+    for (let age = 2; age >= 0; age--) {
+      const idx = ((ti - age) % n + n) % n;
+      const t = TESTIMONIALS[idx];
+      cards.push(React.createElement('div', {
+        key: idx,
+        style: {
+          position: 'absolute', left: 0, bottom: 0, width: '100%', textAlign: 'center',
+          transform: 'translateY(' + (age * 300) + 'px) scale(' + (1 - age * 0.05) + ')',
+          opacity: age === 0 ? 1 : 0,
+          zIndex: 10 - age,
+          transition: 'transform 1.8s cubic-bezier(0.22,1,0.36,1), opacity 0.7s ease-out',
+          animation: age === 0 ? 'slDrop 1.5s cubic-bezier(0.22,1,0.36,1)' : 'none'
+        }
+      },
+        React.createElement('div', { style: { fontFamily: "'Cormorant Garamond',serif", fontStyle: 'italic', fontSize: 'clamp(18px,2vw,23px)', lineHeight: 1.4, color: '#0a0a0a', textWrap: 'balance' } }, '\u201C' + t.q + '\u201D'),
+        React.createElement('div', { style: { marginTop: '7px', fontFamily: "'Manrope',sans-serif", fontSize: '11px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(10,10,10,0.45)' } }, '\u2014 ' + t.a)
+      ));
+    }
+    return {
+      testimonialStack: React.createElement('div', { style: { position: 'relative', height: '128px' } }, cards),
+      stackDisplay: (typeof window !== 'undefined' && window.innerWidth < 920) ? 'none' : 'block',
+      wrapRef: el => { this.wrapEl = el; },
+      houseRef: el => { this.houseEl = el; },
+      logoRef: el => { this.logoEl = el; },
+      hintRef: el => { this.hintEl = el; },
+      stackRef: el => { this.stackEl = el; },
+      blackRef: el => { this.blackEl = el; },
+      headerRef: el => { this.headerEl = el; },
+      navLinkDisplay: compact ? 'none' : (typeof window !== 'undefined' && window.innerWidth < 640 ? 'none' : 'inline'),
+      stats: this.props.showStats === false ? [] : [
+        { value: '120+', label: 'Residences placed' },
+        { value: '14', label: 'Years of practice' },
+        { value: '€2.1B', label: 'Portfolio value' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
